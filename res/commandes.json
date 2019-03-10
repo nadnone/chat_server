@@ -1,0 +1,62 @@
+[
+  {
+    "isAdmin": false,
+    "name": "setPassword",
+    "description": "Set your password",
+    "how": "/setPassword (Your password)"
+  },
+  {
+    "isAdmin": false,
+    "name": "setPicture",
+    "description": "Set your picture",
+    "how": "/setPicture (Your picture)"
+  },
+  {
+    "isAdmin": false,
+    "name": "video",
+    "description": "Share a video in MP4",
+    "how": "/video (Link of video)"
+  },
+  {
+    "isAdmin": false,
+    "name": "who",
+    "description": "Who exist in the database ?",
+    "how": "/who"
+  },
+  {
+    "isAdmin": false,
+    "name": "youtube",
+    "description": "Share a youtube video",
+    "how": "/youtube (link of video)"
+  },
+  {
+    "isAdmin": false,
+    "name": "cmd",
+    "description": "Show all commands",
+    "how": "/cmd"
+  },
+  {
+    "isAdmin": false,
+    "name": "user",
+    "description": "Connecting to the chat",
+    "how": "/user (Username) (password)"
+  },
+  {
+    "isAdmin": true,
+    "name": "createUSer",
+    "description": "Create an User",
+    "how": "/createUser (Username) (Password)"
+  },
+  {
+    "isAdmin": true,
+    "name": "deleteUser",
+    "description": "Delete an User",
+    "how": "/deleteUser (Username)"
+  },
+  {
+    "isAdmin": true,
+    "name": "forceRefresh",
+    "description": "Refresh page of all clients",
+    "how": "/forceRefresh"
+  }
+]
