@@ -2,7 +2,7 @@ const Client = require("pg-native");
 
 var client = new Client();
 try {
-    client.connectSync("postgresql://tchat:7842925043@localhost:5432/chat");
+    client.connectSync("postgresql://postgres:1234@localhost:5432/chat");
 } catch (e) {
     console.log(e);
 }

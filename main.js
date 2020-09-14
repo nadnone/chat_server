@@ -6,11 +6,11 @@ const express = require("express");
 var app = express();
 
 var privateKey = fs.readFileSync(
-  "Your privateKey",
+  "certificates/key.pem",
   "utf8"
 );
 var certificate = fs.readFileSync(
-  "Your fullChain",
+  "certificates/certificates.pem",
   "utf8"
 );
 
@@ -63,7 +63,7 @@ function checkIFAliveWS() {
     }
   }
 }
-setInterval(checkIFAliveWS, 10000);
+//setInterval(checkIFAliveWS, 10000);
 wss.on("connection", function connection(ws, req) {
   list_ws.push(ws);
   isAlive.push(true);
@@ -88,22 +88,24 @@ wss.on("connection", function connection(ws, req) {
       for (var i = 0; i < list_ws.length; i++) {
         if (list_ws[i] === ws) {
           let obj = json_parse(message);
+          console.log(obj);
           if (obj.value.version.includes(version) === false) {
             return;
           }
+          /*
           if (
             obj.value.ping === "pong" &&
             obj.value.version.includes(version)
           ) {
             heartbeat(i);
             return;
-          }
+          }*/
           if (obj.value.msg === undefined) {
             return;
           }
 
           if (obj.value.msg.includes(prefix + "user")) {
-            console.log("[*] Tendative de connexion");
+            console.log("[*] Tentative de connexion");
             let recv = options.usercontrol(obj.value.msg, ws);
             if (recv !== 0) {
               list_ws[i] = recv.socket;

@@ -1,4 +1,4 @@
-var wss = new WebSocket("wss://chat.nadirfelder.xyz:443/");
+var wss = new WebSocket("wss://localhost:443/");
 
 window.username = "";
 window.conn = "";
@@ -42,7 +42,8 @@ addEventListener("keypress", function(event){
             console.log(username);
         }
       let obj = {
-        "msg": msg
+        "msg": msg,
+        "version": "1.0.3",
       };
       server_down();
       try{
@@ -60,8 +61,24 @@ function sendMessage(msg, conn){
 wss.onopen = function(event){
   window.conn = this;
   this.onmessage = function(event){
-
+/*
+    console.log(event.data);
+    if(event.data.toString() === "ping") {
+      console.log("pong");
+      let obj_ping = {
+        "ping": "pong",
+        "version": "1.0.3",
+      };
+      try {
+        sendMessage(JSON.stringify(obj_ping, conn));
+      }
+      catch (e) {
+        console.log(e);
+      }
+    }
+*/
     let element = chatElement();
+    console.log(event.data);
     let obj = JSON.parse(event.data.toString());
 
     let gif = "";

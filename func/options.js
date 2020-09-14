@@ -1,7 +1,9 @@
 const func_send = require("./send_messages");
 const stringify = require("json-stringify");
-const bcrypt = require("bcrypt-nodejs");
+const bcrypt = require("bcrypt");
 const database = require("./database");
+
+const saltRounds = 12;
 
 module.exports = {
 
@@ -29,6 +31,7 @@ module.exports = {
                           user: "System",
                           msg: "Bad account"
                       };
+                      console.log(client_user + " : " + bcrypt.compareSync(client_pass, res[0].password));
                       func_send.send_message(ws, stringify(obj_tosend));
                       return 0;
                   }
