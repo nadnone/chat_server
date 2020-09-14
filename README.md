@@ -12,6 +12,6 @@ Ce projet est une archive d'un petit chat que j'avais crée en 2018
     - isAdmin => booléen
     - password -> varchar
 
-- finalement, pour installer le tout, via votre console, faite un `npm install` puis `node main.js` (à la racine du dossier projet)
+- finalement, pour installer le tout, via votre console, faites un `npm install` puis `node main.js` (à la racine du dossier projet)
 Il est possible qu'il y ai quelques soucis de packages étant donnée l'ancienneté du projet
 - je doute que je maintienne ce chat à l'avenir
